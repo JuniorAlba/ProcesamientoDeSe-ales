@@ -1,4 +1,4 @@
-function [y_inv,t] = inversion(y,t)
+function [y_inv,t] = inversion(t,y)
     %inversion: y_inv = y(-t)
     %Esto funciona si el vector de tiempos esta centrado en t=0
     y_inv = y(end:-1:1);

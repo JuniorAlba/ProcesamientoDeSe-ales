@@ -1,3 +1,3 @@
-function [y_rec,t] = rectificacion(y,t)
+function [y_rec,t] = rectificacion(t,y)
     y_rec = abs(y);
 endfunction

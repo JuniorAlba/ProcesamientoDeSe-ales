@@ -11,12 +11,12 @@ figure(1)
 hold on
 plot(t,y,'-r');
 
-%[y_inv,t] = inversion(y,t);
+%[y_inv,t] = inversion(t,y);
 %plot(t,y_inv,'-b');
 
-%[y_rect,t] = rectificacion(y,t);
+%[y_rect,t] = rectificacion(t,y);
 %plot(t,y_rect,'-b');
 
 N=5;
-[y_cuant,t] = cuantizacion(y,t,N);
+[y_cuant,t] = cuantizacion(t,y,N);
 plot(t,y_cuant,'-b');

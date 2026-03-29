@@ -1,4 +1,4 @@
-function [x,t] = sobremuestreo_avanzado(x_viej,t_viej,fm_new,funcion_pesos)
+function [x,t] = sobremuestreo_avanzado(t_viej,x_viej,fm_new,funcion_pesos)
     T_viej = t_viej(2)-t_viej(1);
     T = 1/fm_new;
     t = t_viej(1):T:t_viej(end);
