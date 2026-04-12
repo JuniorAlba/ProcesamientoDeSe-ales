@@ -41,7 +41,6 @@ error_media = [];
 error_varianza = [];
 tolerancia_media    = z*sqrt(1/N + 1/R);  %Estoy comparando dos estimadores independientes, la varianza del resultado es Vf = V1 + V2
 tolerancia_varianza = z*sqrt(2/(N-1) + 2/(R-1));  %Pero yo quiero el error (desvio) entonces DesvF = sqrt(Desv1^2 + Desv2^2)
-
 % Estadísticas ensemble en t=1 (instante fijo de referencia)
 media_ensemble    = mean(Proceso_estocastico(:,1));
 varianza_ensemble = var(Proceso_estocastico(:,1));

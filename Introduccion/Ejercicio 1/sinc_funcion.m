@@ -9,4 +9,6 @@ function [y,t] = sinc_funcion(fs,fm,tini,tfin)
     %y les asigna valor 1
 
     y(abs(x) < eps) = 1;
+    #es preferible que sea entendible o se parezca a lo que vemos conceptualmente
+    #en la teoria, cambiar codigo
 endfunction

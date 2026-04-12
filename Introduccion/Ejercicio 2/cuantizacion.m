@@ -1,4 +1,4 @@
-function [y_cuantizada,t] = cuantizacion(y,t,N)
+function [y_cuantizada,t] = cuantizacion(t,y,N)
     minimo = min(y);
     y_pos = y - minimo;
     Amplitud = max(y_pos);
