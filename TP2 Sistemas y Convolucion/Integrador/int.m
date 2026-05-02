@@ -13,7 +13,7 @@ r = n.*(n>=0);
 L_h = length(h);
 L_x = length(r);
 L_y = L_h + L_x - 1;
-
+% y(L_y) = x*h = matriz(L_y,L_x)*(L_x)x
 H = zeros(L_y, L_x);
 
 for i = 1:L_h
@@ -23,3 +23,24 @@ for i = 1:L_h
     end
 end
 conv_lineal_matricial = H * r(:)
+
+
+%L_y = L_h + L_x -1
+%necesito agregarle a cada señal la cantidad de ceros necesaria para que tengan el mismo 
+%tamaño que el resultado de hacer conv_lineal, agregando ceros evitamos al hacer periodica
+%la señal h el elemento que da la vuelta contribuya a los demas resultados
+
+%para la señal de entrada necesitamos agregar: L_y-L_x
+%para la señal de salida necesitamos agregar: L_y-L_h
+r = [r(:); zeros(L_y-L_x,1)];
+h = [h(:); zeros(L_y-L_h,1)];
+
+conv_circular_transformada = convolucion_circular(r,h)
+
+
+
+#si todos los elementos de estas operaciones son muy cercanos a ceros entonces el resultado es equivalente.
+
+#muy cercanos ya que puede afectar errores numericos de las operaciones
+conv_lineal_sumatoria-conv_lineal_matricial
+conv_lineal_sumatoria-conv_circular_transformada

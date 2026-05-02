@@ -1,6 +1,6 @@
 function [conv_lineal] = convolucion_lineal_v2(x,y)
     % fijo n y calculo la sumatoria sobre k
-    % y[n] = Σ x[k] * y[n-k] → requiere invertir y y desplazarla
+    % y[n] = sum x[k] * y[n-k]  requiere invertir y y desplazarla
     x = x(:);
     y = y(:);
     conv_lineal = zeros(length(y)+length(x)-1,1);
