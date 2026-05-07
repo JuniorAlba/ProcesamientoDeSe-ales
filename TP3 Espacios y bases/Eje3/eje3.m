@@ -8,7 +8,7 @@ funciones = [];
 for n = 0:n_coefs-1
 
     P_normalizada = obtener_funcion_legendre(n,t);
-    %aproximacion a la integral 
+    %aproximacion a la integral
     dt = t(2) - t(1);
     ai = f * P_normalizada' *dt;
 

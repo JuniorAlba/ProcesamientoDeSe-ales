@@ -94,11 +94,8 @@ ylabel('Grado de parecido')
 %DUDA
 % CONCLUSIONES ITEM C
 % La onda cuadrada de 5.5 Hz no puede ser representada exactamente por ninguna
-% de las senoidales de la grilla de 1 a 10 Hz, ya que sus armonicos naturales
-% (5.5, 16.5, 27.5 Hz...) no coinciden con ninguna frecuencia de dicha grilla.
-% Esto se refleja en el grafico de barras: no hay un pico claro en ninguna
-% frecuencia particular, sino que el parecido aparece distribuido entre varias.
-
+% de las senoidales de la grilla de 1 a 10 Hz, ya que su frecuencia no se encuentra
+% entre ninguna de estas senoidales.
 
 % Esto es consecuencia directa de la ortogonalidad de las senoidales:
 % si la frecuencia necesaria no esta en la base de comparacion, la energia
