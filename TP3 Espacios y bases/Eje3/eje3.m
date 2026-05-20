@@ -24,6 +24,17 @@ plot(t',funciones'*alphas)
 plot(t,f)
 
 
+
+
+
+
+
+
+
+
+
+
+
 %ITEM B
 % coeficientes exactos
 a1_exacto = alphas(2);   % alpha_1
@@ -72,6 +83,19 @@ ylabel('alpha_3')
 zlabel('ECT')
 
 % se puede observar que en el centro de la superficie es el punto de menor error
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 %ITEM C

@@ -44,6 +44,7 @@ ylabel('Grado de parecido')
 %ITEM B ----------------
 
 f2 = zeros(1, fm);
+
 for i = 1:length(frecuencias)
     [y, ~] = senoidal(frecuencias(i), fm, fases(i), tini, tfin);
     f2 = f2 + coeficientes(i) .* y;
@@ -78,12 +79,12 @@ ylabel('Grado de parecido')
 %ITEM C --------------------
 
 
-cuadrada = onda_cuad(5.5,fm,0);
+cuadrada = onda_cuad(5.5,1000,0);
 
 parecidos3 = zeros(1, length(frecuencias));
 for i = 1:length(frecuencias)
     [y, ~] = senoidal(frecuencias(i), fm, 0, tini, tfin);
-    parecidos3(i) = (cuadrada*y') / (norm(cuadrada) * norm(y));
+    parecidos3(i) = (cuadrada*y') ./ (norm(cuadrada) * norm(y));
 end
 figure(3)
 bar(frecuencias, parecidos3)
@@ -97,9 +98,7 @@ ylabel('Grado de parecido')
 % de las senoidales de la grilla de 1 a 10 Hz, ya que su frecuencia no se encuentra
 % entre ninguna de estas senoidales.
 
-% Esto es consecuencia directa de la ortogonalidad de las senoidales:
-% si la frecuencia necesaria no esta en la base de comparacion, la energia
-% de la señal se "derrama" sobre las frecuencias disponibles sin concentrarse
-% en ninguna. En terminos de espacios vectoriales, es equivalente al caso de
-% base no completa: si el conjunto de senoidales no incluye las frecuencias
-% de la señal a representar, siempre existira un error de aproximacion.
+% Ademas la frecuencia de 5.5Hz es ortogonal a las senoidales de 1 a 10 Hz, por lo que
+% el parecido con cada una de estas senoidales es cercano a cero. Esto se debe a que el
+%producto interno entre la onda cuadrada y cada senoidal de la grilla da un resultado cercano a cero,
+%lo que indica que no hay una componente significativa de ninguna de estas senoidales en la onda cuadrada.

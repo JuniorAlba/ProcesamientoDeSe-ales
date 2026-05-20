@@ -49,7 +49,7 @@ producto_interno = x_comp*y'
 angulo = acos(producto_interno/(norm(x_comp)*norm(y)))
 norm(x_comp)*norm(y)*cos(angulo) %esto es igual al producto interno, por lo tanto el resultado es correcto
 
-angulo * 180/pi %angulo en grados
+angulo_grados = angulo * 180/pi %angulo en grados
 
 
 % JUSTIFICACIÓN DEL ÁNGULO ENTRE x Y y
@@ -100,8 +100,8 @@ base2 = (senoidal(200,fm,0,tini,tfin)(1,:));
 base2 = base2/norm(base2); %ϕ2
 
 %Obtenga los coeficientes de proyección α1 y α2.
-alpha1 = x_comp*base1';
-alpha2 = x_comp*base2';
+alpha1 = x_comp*base1'
+alpha2 = x_comp*base2'
 %Construya la señal aproximada ~x.
 x_aprox = alpha1*base1 + alpha2*base2;
 %Calcule el Error Cuadrático Total entre la señal original y su aproximación (utilizando
